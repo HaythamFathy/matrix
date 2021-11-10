@@ -1,0 +1,44 @@
+#include<stdio.h>
+
+void main()
+{
+    int mat[12][12];
+    int i, j, row, col, empty=0;
+    printf("Enter the number of rows and columns for the matrix\n");
+    scanf_s("%d%d", &row, &col);
+    printf("Enter the elements of the matrix\n");
+    for (i = 0;i < row;i++)
+    {
+        for (j = 0;j < col;j++)
+        {
+            scanf_s("%d", &mat[i][j]);
+        }
+    }
+
+    printf("The matrix\n");
+    for (i = 0;i < row;i++)
+    {
+        for (j = 0;j < col;j++)
+        {
+            printf("%d\t", mat[i][j]);
+        }
+        printf("\n");
+    }
+    //To check all the elements
+    for (i = 0;i < row;i++)
+    {
+        for (j = 0;j < col;j++)
+        {
+            if(mat[i][j] != 0){
+                empty = 1;
+                break;
+            }
+        }
+    }
+    if (empty == 1) {
+        printf("the matrix is not empty");
+    }
+    else {
+        printf("the matrix is empty");
+    }
+}
